@@ -1,22 +1,14 @@
-copying content of a file to the other
-def copy_file(filename):
-    with open ("sample.txt", "r") as firstFile, open ("second.txt", "a") as secondFile:
-        secondFile.write(firstFile.read())
+from datetime import datetime
 
-copy_file("sample.txt")
+#log messages with timestamps into a file
+message = input("Enter a message \n")
+def log_message(filename):
+    with open ("log.txt", "w") as file:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        file.write(f"[{timestamp}] {message}")
 
-#counting number of occurence of a specific word in a text file
-specWord = input("enter a word: \n")
-def count_word(filename):
-    with open ("sample.txt", "r") as file:
-        lines = file.readlines()
-        word_count = 0
-        for line in lines:
-            words = line.split()
+    with open ("log.txt", "r") as file:
+        for line in file:
+            print(line)
 
-            for word in words:
-                if word == specWord:
-                    word_count += 1
-    print(f"'{specWord}' appears {word_count} times.")      
-        
-count_word("sample.txt")
+log_message("log.txt")
