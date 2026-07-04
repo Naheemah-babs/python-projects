@@ -7,7 +7,7 @@ row_sum = np.sum(matrix, axis = 1)
 print(row_sum)
 
 
-# 1. Create a 3D random array and compute statistics along specific axes
+# Create a 3D random array and compute statistics along specific axes
 # Create a 3D random array (3 x 4 x 5)
 arr = np.random.randint(1, 101, size=(3, 4, 5))
 
@@ -37,3 +37,21 @@ print(np.min(arr, axis=1))
 # Standard deviation along axis 2
 print("\nStandard deviation along axis 2:")
 print(np.std(arr, axis=2))
+
+# Generate a dataset of random floats and normalize between 0 and 1
+import numpy as np
+
+# Generate 20 random floats between 10 and 100
+data = np.random.uniform(10, 100, 20)
+
+print("Original Data:")
+print(data)
+
+# Min-Max Normalization
+normalized = (data - np.min(data)) / (np.max(data) - np.min(data))
+
+print("\nNormalized Data:")
+print(normalized)
+
+print("\nMinimum:", np.min(normalized))
+print("Maximum:", np.max(normalized))
