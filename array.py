@@ -55,3 +55,22 @@ print(normalized)
 
 print("\nMinimum:", np.min(normalized))
 print("Maximum:", np.max(normalized))
+
+
+#conditional replacement to create a binary mask for values above a threshold
+
+# Generate a random array
+data = np.random.randint(0, 100, 20)
+
+print("Original Data:")
+print(data)
+
+# Set threshold
+threshold = 50
+
+# Create binary mask
+binary_mask = np.where(data > threshold, 1, 0)
+
+print("\nThreshold:", threshold)
+print("Binary Mask:")
+print(binary_mask)
